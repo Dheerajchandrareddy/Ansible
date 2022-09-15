@@ -75,11 +75,11 @@
         vpc_subnet_id: "{{ ansible_tower_subnet.subnet.id }}"
         assign_public_ip: yes
       register: ansible_tower_instance_windows
-    - name: get the Administrator password
-      amazon.aws.ec2_win_password:
-        instance_id: ami-0d72555523e18b6d7
-        region: us-east-1
-        key_file: "~/aws-creds/ansible-tower-aws-key.pem"
+    #- name: get the Administrator password
+      #amazon.aws.ec2_win_password:
+        #instance_id: ami-0d72555523e18b6d7
+        #region: us-east-1
+        #key_file: "~/aws-creds/ansible-tower-aws-key.pem"
     - name: Show windows instance details - debug output
       debug: 
         msg: "windows instance is accesible at {{ ansible_tower_instance_windows }}"
